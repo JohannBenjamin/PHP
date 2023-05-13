@@ -16,10 +16,10 @@
             <form action="" method="post" class="form-control">
                 <div class="row">
                     <div class="col-sm-3">
-                        <input type="text" name="txtN1" placeholder="Informe N1" class="form-control" id="txtN1">
+                        <input type="number" name="txtN1" placeholder="Informe N1" class="form-control" id="txtN1" required> <!--type: number (para aceitar somente números) e required para obrigar o preenchimento-->
                     </div>
                     <div class="col-sm-3">
-                        <input type="text" name="txtN2" placeholder="Informe N2" class="form-control" id="txtN2">
+                        <input type="number" name="txtN2" placeholder="Informe N2" class="form-control" id="txtN2" required>
                     </div>
                     <div class="col-sm-6">
                         <button id="btoMais" name="bto" class="btn btn-primary" formaction="pag01.php" value="mais"> + </button>
@@ -31,19 +31,21 @@
                 <hr>
                 <div class="row">
                     <div class="col-sm-12">
-                        <div class="text-center p-3" style="background-color: lightgray;">
+                        <div class="text-center p-3 m-2" style="background-color: lightgray; border-radius: 10xp;">
                             <h1>
                                 <?php
                                     if($_POST)
                                     {
                                         $n1 = $_POST['txtN1'];
                                         $n2 = $_POST['txtN2'];
+                                        $n1 = str_replace(',', '.', $n1); //str_replace(valor buscado, valor que substituira, variável ou texto)
+                                        $n2 = str_replace(',', '.', $n2);
                                         $operacao = $_POST['bto'];
-                                        $total = 0;
+                                        $total = "Informe N1 e N2";
 
                                         //print_r($_POST);
 
-                                        if($n1 <> null and $n2 <> null)
+                                        if(is_numeric($n1) and is_numeric($n2)) //is_numeric(variavel) retorna true ou false se é ou não numérico
                                         {
                                             if($operacao == "mais")
                                             {
@@ -59,9 +61,21 @@
                                             }
                                             else if($operacao == "dividir")
                                             {
-                                                $total = $n1 / $n2;
+                                                if($n2 == 0)
+                                                {
+                                                    $total = "Erro! Divisão por zero";
+                                                }
+                                                else
+                                                {
+                                                    $total = $n1 / $n2;
+                                                }
                                             }
                                         }
+                                        else
+                                        {
+                                            $total = "Informe os números";
+                                        }
+                                        $total = str_replace('.', ',', $total);
                                         echo $total;
                                     }
                                 ?>
