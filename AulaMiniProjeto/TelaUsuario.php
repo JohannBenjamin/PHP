@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Usuario</title>
     <link rel="stylesheet" href="../css/bootstrap.css">
 </head>
 <body>
@@ -19,7 +19,7 @@
                         <input type="number" name="txtId" min="0"placeholder="Id" class="form-control" id="txtId">
                     </div>
                     <div class="col-sm-4">
-                        <button id="btnBuscar" name="btnBuscar" class="btn btn-primary" formaction="pag01.php" value="buscar">&#128269;</button>
+                        <button id="btnBuscar" name="btnBuscar" class="btn btn-primary" formaction="TelaUsuario.php" value="buscar">&#128269;</button>
                     </div>
                     <div class="col-sm-4">
                         <input type="date" name="txtCadastro" class="form-control" id="txtCadastro">
@@ -47,7 +47,7 @@
                     </div>
                     <div class="col-sm-4">
                         <select name="txtStatus" class="form-control" id="txtStatus">
-                            <option value="">--Selecione um Status --</option>
+                            <option value="">-- Selecione um Status --</option>
                             <option value="Ativo">Ativo</option>
                             <option value="Inativo">Inativo</option>
                         </select>
@@ -59,17 +59,12 @@
                     </div>                    
                 </div>
                 <div class="row mt-3">
-                    <div class="col-sm-6">
-                        <div class="text-center" style="background-color: lightgray; border-radius: 10xp;">
-                            <h1>0</h1>
-                        </div>
-                    </div>
-                    <div class="col-sm-6 text-end">
-                        <button id="btnCadastrar" name="btnCadastrar" class="btn btn-success" formaction="pag01.php" value="cadastrar">Cadastrar</button>
-                        <button id="btnAlterar" name="btnAlterar" class="btn btn-secondary" formaction="pag01.php" value="alterar">Alterar</button>
-                        <button id="btnLimpar" name="btnLimpar" class="btn btn-warning" formaction="pag01.php" value="limpar">Limpar</button>
-                        <button id="btnExcluir" name="btnExcluir" class="btn btn-danger" formaction="pag01.php" value="excluir">Excluir</button>
-                        <button id="btnSair" name="btnSair" class="btn btn-dark" formaction="pag01.php" value="sair">Sair</button>
+                    <div class="col-sm-12 text-end">
+                        <button id="btnCadastrar" name="btnCadastrar" class="btn btn-success" formaction="TelaUsuario.php" value="cadastrar">Cadastrar</button>
+                        <button id="btnAlterar" name="btnAlterar" class="btn btn-secondary" formaction="TelaUsuario.php" value="alterar">Alterar</button>
+                        <button id="btnLimpar" name="btnLimpar" class="btn btn-warning" formaction="TelaUsuario.php" value="limpar">Limpar</button>
+                        <button id="btnExcluir" name="btnExcluir" class="btn btn-danger" formaction="TelaUsuario.php" value="excluir">Excluir</button>
+                        <button id="btnSair" name="btnSair" class="btn btn-dark" formaction="TelaUsuario.php" value="sair">Sair</button>
                     </div>
                 </div>
             </form>
