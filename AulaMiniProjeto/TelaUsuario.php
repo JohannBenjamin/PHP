@@ -16,7 +16,7 @@
             <form action="" method="post" class="form-control">
                 <div class="row mt-3">
                     <div class="col-sm-4">
-                        <input type="number" name="txtId" min="0"placeholder="Id" class="form-control" id="txtId">
+                        <input type="number" name="txtId" min="0" placeholder="Id" class="form-control" id="txtId">
                     </div>
                     <div class="col-sm-4">
                         <button id="btnBuscar" name="btnBuscar" class="btn btn-primary" formaction="TelaUsuario.php" value="buscar">&#128269;</button>

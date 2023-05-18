@@ -16,17 +16,17 @@
             <form action="" method="post" class="form-control">
                 <div class="row mt-3">
                     <div class="col-sm-3">
-                        <input type="number" name="txtId" id="txtId" class="form-control" placeholder="Id">
+                        <input type="number" name="txtId" id="txtId" class="form-control" min="0" placeholder="Id">
                     </div>
                     <div class="col-sm-9">
                         <button id="btnBuscar" name="btnBuscar" class="btn btn-primary" formaction="TelaCategoria.php">&#128269;</button>
                     </div>
                 </div>
                 <div class="row mt-3">
-                    <div class="col-sm-6">
+                    <div class="col-sm-9">
                         <input type="text" name="txtNome" id="txtNome" class="form-control" placeholder="Nome">
                     </div>
-                    <div class="col-sm-6">
+                    <div class="col-sm-3">
                         <select name="txtStatus" class="form-control" id="txtStatus">
                             <option value="">-- Selecione um Status --</option>
                             <option value="Ativo">Ativo</option>
@@ -41,11 +41,11 @@
                 </div>
                 <div class="row mt-3">
                     <div class="col-sm-12 text-end">
-                        <button id="btnCadastrar" name="btnCadastrar" class="btn btn-success" formaction="TelaUsuario.php" value="cadastrar">Cadastrar</button>
-                        <button id="btnAlterar" name="btnAlterar" class="btn btn-secondary" formaction="TelaUsuario.php" value="alterar">Alterar</button>
-                        <button id="btnLimpar" name="btnLimpar" class="btn btn-warning" formaction="TelaUsuario.php" value="limpar">Limpar</button>
-                        <button id="btnExcluir" name="btnExcluir" class="btn btn-danger" formaction="TelaUsuario.php" value="excluir">Excluir</button>
-                        <button id="btnSair" name="btnSair" class="btn btn-dark" formaction="TelaUsuario.php" value="sair">Sair</button>
+                        <button id="btnCadastrar" name="btnCadastrar" class="btn btn-success" formaction="TelaCategoria.php" value="cadastrar">Cadastrar</button>
+                        <button id="btnAlterar" name="btnAlterar" class="btn btn-secondary" formaction="TelaCategoria.php" value="alterar">Alterar</button>
+                        <button id="btnLimpar" name="btnLimpar" class="btn btn-warning" formaction="TelaCategoria.php" value="limpar">Limpar</button>
+                        <button id="btnExcluir" name="btnExcluir" class="btn btn-danger" formaction="TelaCategoria.php" value="excluir">Excluir</button>
+                        <button id="btnSair" name="btnSair" class="btn btn-dark" formaction="TelaCategoria.php" value="sair">Sair</button>
                     </div>
                 </div>
             </form>
