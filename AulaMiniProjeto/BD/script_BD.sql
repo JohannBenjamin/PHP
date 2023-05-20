@@ -92,6 +92,9 @@ values
 
 #SELECTS
 select * from Usuario;
+select * from Categoria;
+select * from Produto;
+select * from Historico;
 select P.nome_Produto as 'Nome', C.nome_Categoria as 'Nome da Categoria', P.qtde_Produto as 'Quantidade', P.valor_Produto as 'Valor', P.status_Produto as 'Status', P.obs_Produto as 'OBS' from Produto as P
 inner join Categoria as C on C.id_Categoria = P.id_Categoria_Produto;
 select * from Produto where status_Produto LIKE '%ivo'
