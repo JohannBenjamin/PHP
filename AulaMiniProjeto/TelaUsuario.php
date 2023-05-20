@@ -19,7 +19,7 @@
                         <input type="number" name="txtId" min="0" placeholder="Id" class="form-control" id="txtId">
                     </div>
                     <div class="col-sm-4">
-                        <button id="btnBuscar" name="btnBuscar" class="btn btn-primary" formaction="TelaUsuario.php" value="buscar">&#128269;</button>
+                        <button id="btnBuscar" name="btnBuscar" class="btn btn-primary" formaction="./PHPUsuário/PesquisarUsuario.php" value="buscar">&#128269;</button>
                     </div>
                     <div class="col-sm-4">
                         <input type="date" name="txtCadastro" class="form-control" id="txtCadastro">
@@ -60,11 +60,11 @@
                 </div>
                 <div class="row mt-3">
                     <div class="col-sm-12 text-end">
-                        <button id="btnCadastrar" name="btnCadastrar" class="btn btn-success" formaction="TelaUsuario.php" value="cadastrar">Cadastrar</button>
-                        <button id="btnAlterar" name="btnAlterar" class="btn btn-secondary" formaction="TelaUsuario.php" value="alterar">Alterar</button>
-                        <button id="btnLimpar" name="btnLimpar" class="btn btn-warning" formaction="TelaUsuario.php" value="limpar">Limpar</button>
-                        <button id="btnExcluir" name="btnExcluir" class="btn btn-danger" formaction="TelaUsuario.php" value="excluir">Excluir</button>
-                        <button id="btnSair" name="btnSair" class="btn btn-dark" formaction="TelaUsuario.php" value="sair">Sair</button>
+                        <button id="btnCadastrar" name="btnCadastrar" class="btn btn-success" formaction="./PHPUsuário/CadastrarUsuario.php" value="cadastrar">Cadastrar</button>
+                        <button id="btnAlterar" name="btnAlterar" class="btn btn-secondary" formaction="./PHPUsuário/AlterarUsuario.php" value="alterar">Alterar</button>
+                        <a id="btnLimpar" name="btnLimpar" class="btn btn-warning" href="TelaUsuario.php">Limpar</a>
+                        <button id="btnExcluir" name="btnExcluir" class="btn btn-danger" formaction="./PHPUsuário/DeletarUsuario.php" value="excluir">Excluir</button>
+                        <button id="btnSair" name="btnSair" class="btn btn-dark" formaction="" value="sair">Sair</button>
                     </div>
                 </div>
             </form>
