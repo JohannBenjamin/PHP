@@ -19,7 +19,7 @@
                         <input type="number" name="txtId" id="txtId" class="form-control" min="0" placeholder="Id">
                     </div>
                     <div class="col-sm-3">
-                        <button id="btnBuscar" name="btnBuscar" class="btn btn-primary" formaction="TelaProduto.php">&#128269;</button>
+                        <button id="btnBuscar" name="btnBuscar" class="btn btn-primary" formaction="./PHPProduto/PesquisarProduto.php">&#128269;</button>
                     </div>
                     <div class="col-sm-3">
                         <input type="number" name="txtIdCategoria" id="txtIdCategoria" class="form-control" min="0" placeholder="Id da Categoria">
@@ -58,11 +58,11 @@
                 </div>
                 <div class="row mt-3">
                     <div class="col-sm-12 text-end">
-                        <button id="btnCadastrar" name="btnCadastrar" class="btn btn-success" formaction="TelaProduto.php" value="cadastrar">Cadastrar</button>
-                        <button id="btnAlterar" name="btnAlterar" class="btn btn-secondary" formaction="TelaProduto.php" value="alterar">Alterar</button>
+                        <button id="btnCadastrar" name="btnCadastrar" class="btn btn-success" formaction="./PHPProduto/CadastrarProduto.php" value="cadastrar">Cadastrar</button>
+                        <button id="btnAlterar" name="btnAlterar" class="btn btn-secondary" formaction="./PHPProduto/AlterarProduto.php" value="alterar">Alterar</button>
                         <button id="btnLimpar" name="btnLimpar" class="btn btn-warning" formaction="TelaProduto.php" value="limpar">Limpar</button>
-                        <button id="btnExcluir" name="btnExcluir" class="btn btn-danger" formaction="TelaProduto.php" value="excluir">Excluir</button>
-                        <button id="btnSair" name="btnSair" class="btn btn-dark" formaction="TelaProduto.php" value="sair">Sair</button>
+                        <button id="btnExcluir" name="btnExcluir" class="btn btn-danger" formaction="./PHPProduto/DeletarProduto.php" value="excluir">Excluir</button>
+                        <button id="btnSair" name="btnSair" class="btn btn-dark" formaction="" value="sair">Sair</button>
                     </div>
                 </div>
             </div>
