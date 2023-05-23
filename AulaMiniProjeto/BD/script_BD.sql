@@ -44,14 +44,14 @@ create table Historico
 	momento_Historico timestamp not null ,
 	tipo_Historico varchar(50) not null ,
 	qtde_Historico int not null ,
-	valor_Historico	decimal(10,5) not null ,
+	valor_Historico	decimal(10,2) not null ,
 	status_Historico varchar(50) not null ,
 	obs_Historico varchar(255) null,
     
     constraint FK_Id_Usuario_Historico foreign key (id_Usuario_Historico) references Usuario(id_Usuario),
     constraint FK_Id_Produto_Historico foreign key (id_Produto_Historico) references Produto(id_Produto)
 );
-drop table Usuario;
+drop table Historico;
 #inserts
 
 insert into Usuario
