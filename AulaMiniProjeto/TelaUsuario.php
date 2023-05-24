@@ -8,6 +8,50 @@
     <link rel="stylesheet" href="../css/bootstrap.css">
 </head>
 <body>
+    <?php
+        $idCampo = '';
+        $nomeCampo = '';
+        $nascimentoCampo = '';
+        $cadastroCampo = '';
+        $usuarioCampo = '';
+        $senhaCampo = '';
+        $imgCampo = '';
+        $statusCampo = '';
+        $obsCampo = '';
+        $msg = 'Execute uma operação...';
+
+        if($_POST)
+        {
+            $btn = $_POST['btn'];
+            if($btn == 'buscar')
+            {
+                $msg = 'Busca realizada com sucesso!';
+                include_once('./PHPUsuário/PesquisarUsuario.php');
+            }
+            if($btn == 'cadastrar')
+            {
+                include_once('./PHPUsuário/CadastrarUsuario.php');
+                if($situacao)
+                {
+                    $idCampo = $id;
+                    include_once('./PHPUsuário/PesquisarUsuario.php');
+                }
+            }
+            if($btn == 'alterar')
+            {
+                include_once('./PHPUsuário/AlterarUsuario.php');
+                if($situacao)
+                {
+                    $idCampo = $id;
+                    include_once('./PHPUsuário/PesquisarUsuario.php');
+                }
+            }
+            if($btn == 'excluir')
+            {
+                include_once('./PHPUsuário/DeletarUsuario.php');
+            }
+        }
+    ?>
     <div class="container mt-3">
         <div class="row">
             <div class="col-sm-12 text-center">
@@ -16,92 +60,64 @@
             <form action="" method="post" class="form-control">
                 <div class="row mt-3">
                     <div class="col-sm-4">
-                        <input type="number" name="txtId" min="0" placeholder="Id" class="form-control" id="txtId">
+                        <input type="number" name="txtId" min="0" placeholder="Id" class="form-control" id="txtId" value="<?=$idCampo?>">
                     </div>
                     <div class="col-sm-4">
-                        <button id="btnBuscar" name="btnBuscar" class="btn btn-primary" formaction="./PHPUsuário/PesquisarUsuario.php" value="buscar">&#128269;</button>
+                        <button id="btnBuscar" name="btn" class="btn btn-primary" formaction="TelaUsuario.php" value="buscar">&#128269;</button>
                     </div>
                     <div class="col-sm-4">
-                        <input type="date" name="txtCadastro" class="form-control" id="txtCadastro">
+                        <input type="date" name="txtCadastro" class="form-control" id="txtCadastro" placeholder="Data de Cadastro" value="<?=substr($cadastroCampo,0,10)?>">
                     </div>
                 </div>
                 <div class="row mt-3">
                     <div class="col-sm-12">
-                        <input type="text" name="txtNome" placeholder="Nome" class="form-control" id="txtNome">
+                        <input type="text" name="txtNome" placeholder="Nome" class="form-control" id="txtNome" value="<?=$nomeCampo?>">
                     </div>
                 </div>
                 <div class="row mt-3">
                     <div class="col-sm-4">
-                        <input type="text" name="txtUsuario" placeholder="Login" class="form-control" id="txtUsario">
+                        <input type="text" name="txtUsuario" placeholder="Login" class="form-control" id="txtUsario" value="<?=$usuarioCampo?>">
                     </div>
                     <div class="col-sm-4">
-                        <input type="password" name="txtSenha" placeholder="Senha" class="form-control" id="txtSenha">
+                        <input type="password" name="txtSenha" placeholder="Senha" class="form-control" id="txtSenha" value="<?=$senhaCampo?>">
                     </div>
                     <div class="col-sm-4">
-                        <input type="date" name="txtNascimento" class="form-control" id="txtNascimento">
+                        <input type="date" name="txtNascimento" class="form-control" id="txtNascimento" placeholder="Data de Nascimento" value="<?=substr($nascimentoCampo,0,10)?>">
                     </div>
                 </div>
                 <div class="row mt-3">
                     <div class="col-sm-8">
-                        <input type="file" name="txtImg" placeholder="Imagem" class="form-control" id="txtImg">
+                        <input type="file" name="txtImg" placeholder="Imagem" class="form-control" id="txtImg" value="<?=$imgCampo?>">
                     </div>
                     <div class="col-sm-4">
                         <select name="txtStatus" class="form-control" id="txtStatus">
                             <option value="">-- Selecione um Status --</option>
-                            <option value="Ativo">Ativo</option>
-                            <option value="Inativo">Inativo</option>
+                            <option value="Ativo" <?=($statusCampo=="Ativo"?"selected":"")?>>Ativo</option>
+                            <option value="Inativo" <?=($statusCampo=="Inativo"?"selected":"")?>>Inativo</option>
                         </select>
                     </div>
                 </div>
                 <div class="row mt-3">
                     <div class="col-sm-12">
-                        <textarea name="txtObs" placeholder="Observações" class="form-control" rows="5" id="txtObs"></textarea>
+                        <textarea name="txtObs" placeholder="Observações" class="form-control" rows="5" id="txtObs"><?=$obsCampo?></textarea>
                     </div>                    
                 </div>
                 <div class="row mt-3">
-                    <div class="col-sm-12 text-end">
-                        <button id="btnCadastrar" name="btnCadastrar" class="btn btn-success" formaction="./PHPUsuário/CadastrarUsuario.php" value="cadastrar">Cadastrar</button>
-                        <button id="btnAlterar" name="btnAlterar" class="btn btn-secondary" formaction="./PHPUsuário/AlterarUsuario.php" value="alterar">Alterar</button>
-                        <a id="btnLimpar" name="btnLimpar" class="btn btn-warning" href="TelaUsuario.php">Limpar</a>
-                        <button id="btnExcluir" name="btnExcluir" class="btn btn-danger" formaction="./PHPUsuário/DeletarUsuario.php" value="excluir">Excluir</button>
-                        <button id="btnSair" name="btnSair" class="btn btn-dark" formaction="" value="sair">Sair</button>
+                    <div class="col-sm-7">
+                        <div class="col-sm-12 text-center p-1" style="background-color: lightgray; border-radius: 10px;">
+                            <h5><?=$msg?></h5>
+                        </div>
+                    </div>
+                    <div class="col-sm-5 text-end">
+                        <button id="btnCadastrar" name="btn" class="btn btn-success" formaction="TelaUsuario.php" value="cadastrar">Cadastrar</button>
+                        <button id="btnAlterar" name="btn" class="btn btn-secondary" formaction="TelaUsuario.php" value="alterar">Alterar</button>
+                        <a id="btnLimpar" name="btn" class="btn btn-warning" href="TelaUsuario.php">Limpar</a>
+                        <button id="btnExcluir" name="btn" class="btn btn-danger" formaction="TelaUsuario.php" value="excluir">Excluir</button>
+                        <button id="btnSair" name="btn" class="btn btn-dark" formaction="" value="sair">Sair</button>
                     </div>
                 </div>
             </form>
         </div>
-        <!--</?php
-            include_once('conexao.php');
-            if($_GET)
-            {
-                $id = $_GET['txtId'];
-                try {
-                    $sql = $conn->query("select * from Usuario where id_Usuario = $id");
-
-                    if($sql->rowCount() != 0)
-                    {
-                        foreach ($sql as $linha) {
-                            echo '<pre>';
-                                print_r($linha);
-                            echo '</pre>';
-                            echo "Nome: ".$linha[1]."<br>";
-                            echo "Login: ".$linha['usuario_Usuario']."<br>";
-                            echo "<hr>";
-                            $_GET['txtNome'] = $linha[1];
-                        }
-                    }
-                    else
-                    {
-                        echo "Nenhum resultado!";
-                    }
-
-
-                } catch (PDOExcep $ex) {
-                    echo $ex->getMessage();
-                }
-            }
-
-
-        ?>-->
     </div>
     <script src="../js/bootstrap.js"></script>
 </body>
