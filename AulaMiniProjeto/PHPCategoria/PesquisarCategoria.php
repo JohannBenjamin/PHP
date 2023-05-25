@@ -1,11 +1,15 @@
 <?php
-    include_once('../conexao.php');
+    include_once('conexao.php');
 
     if($_POST)
     {
-        if(!empty($_POST['txtId']))
+        if(!empty($_POST['txtId']) || !empty($idCampo))
         {
             $id = $_POST['txtId'];
+            if(!empty($idCampo))
+            {
+                $id = $idCampo;
+            }
 
             try {
                 $sql = $conn->query("
@@ -14,24 +18,29 @@
 
                 if ($sql->rowCount()>=1) {
                     foreach ($sql as $row) {
-                        echo "<p>Id: $row[0]</p>";
+                        /*echo "<p>Id: $row[0]</p>";
                         echo "<p>Nome: $row[1]</p>";
                         echo "<p>Status: $row[2]</p>";
-                        echo "<p>Obs: $row[3]</p>";
+                        echo "<p>Obs: $row[3]</p>";*/
+
+                        $idCampo = $row[0];
+                        $nomeCampo = $row[1];
+                        $statusCampo = $row[2];
+                        $obsCampo = $row[3];
                     }
                 }
                 else
                 {
-                    echo '<p>Categoria não existe</p>';
+                    $msg = 'Erro! Categoria não existe';
                 }
 
             } catch (PDOException $ex) {
-                echo $ex->getMessage();
+                $msg = $ex->getMessage();
             }
         }
         else
         {
-            echo '<p>Erro!Informe o Id para Pesquisar.</p>';
+            $msg = 'Erro! Informe o Id para Pesquisar.';
         }
     }
     else
@@ -39,6 +48,3 @@
         header('Location:../TelaCategoria.php');
     }
 ?>
-
-<hr>
-<a href="../TelaCategoria.php">Voltar</a>

@@ -33,7 +33,7 @@
                 }
 
             } catch (PDOException $ex) {
-                echo $ex->getMessage();
+                $msg = $ex->getMessage();
             }
 
             if ($situacao)

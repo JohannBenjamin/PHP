@@ -1,5 +1,5 @@
 <?php
-    include_once('../conexao.php');
+    include_once('conexao.php');
 
     if($_POST)
     {
@@ -17,20 +17,20 @@
                 ));
 
                 if ($sql->rowCount()>=1) {
-                    echo '<p>Dados Excluidos com sucesso</p>';
+                    $msg = 'Dados Excluidos com sucesso';
                 }
                 else
                 {
-                    echo '<p>Erro na exclusão!</p>';
+                    $msg = 'Erro na exclusão!';
                 }
 
             } catch (PDOException $ex) {
-                echo $ex->getMessage();
+                $msg = $ex->getMessage();
             }
         }
         else
         {
-            echo '<p>Erro!Informe o Id para excluir.</p>';
+            $msg = 'Erro!Informe o Id para excluir.';
         }
     }
     else
@@ -38,6 +38,3 @@
         header('Location:../TelaCategoria.php');
     }
 ?>
-
-<hr>
-<a href="../TelaCategoria.php">Voltar</a>
