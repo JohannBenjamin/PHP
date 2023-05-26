@@ -1,8 +1,10 @@
 <?php
-    include_once('../conexao.php');
+    include_once('conexao.php');
 
     if($_POST)
     {
+        $situacao = FALSE;
+
         if(empty($_POST['txtIdCategoria']) ||
         empty($_POST['txtNome']) ||
         empty($_POST['txtQtde']) ||
@@ -10,7 +12,7 @@
         empty($_POST['txtStatus']) ||
         empty($_POST['txtObs']))
         {
-            echo '<p>Erro! Preencha todos os campos para Cadastrar Produto<p>';
+            $msg = 'Erro! Preencha todos os campos para Cadastrar um Produto';
         }
         else
         {
@@ -53,16 +55,17 @@
                 ));
 
                 if ($sql->rowCount()>=1) {
-                    echo '<p>Dados Cadastrados com sucesso</p>';
-                    echo '<p>ID Gerado: '.$conn->lastInsertId().'</p>';
+                    $id = $conn->lastInsertId();
+                    $msg = 'Dados Cadastrados com sucesso. ID Gerado: '.$id;
+                    $situacao = TRUE;
                 }
                 else
                 {
-                    echo '<p>Erro no cadastro!</p>';
+                    $msg = 'Erro no cadastro!';
                 }
 
             } catch (PDOException $ex) {
-                echo $ex->getMessage();
+                $msg = $ex->getMessage();
             }
         }
     }
@@ -71,6 +74,3 @@
         header('Location:../TelaProduto.php');
     }
 ?>
-
-<hr>
-<a href="../TelaProduto.php">Voltar</a>
