@@ -30,7 +30,7 @@
         }
         else
         {
-            $msg = 'Erro!Informe o Id para excluir.';
+            $msg = 'Erro! Informe o Id para excluir.';
         }
     }
     else

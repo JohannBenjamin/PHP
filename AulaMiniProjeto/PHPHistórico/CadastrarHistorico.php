@@ -1,8 +1,10 @@
 <?php
-    include_once('../conexao.php');
+    include_once('conexao.php');
 
     if($_POST)
     {
+        $situacao = FALSE;
+
         if(empty($_POST['txtIdUsuario']) ||
         empty($_POST['txtIdProduto']) ||
         empty($_POST['txtCadastro']) ||
@@ -12,7 +14,7 @@
         empty($_POST['txtStatus']) ||
         empty($_POST['txtObs']))
         {
-            echo '<p>Erro! Preencha todos os campos para Cadastrar Usuário<p>';
+            $msg = 'Erro! Preencha todos os campos para Cadastrar um Histórico';
         }
         else
         {
@@ -59,16 +61,17 @@
                 ));
 
                 if ($sql->rowCount()>=1) {
-                    echo '<p>Dados Cadastrados com sucesso</p>';
-                    echo '<p>ID Gerado: '.$conn->lastInsertId().'</p>';
+                    $id = $conn->lastInsertId();
+                    $msg = 'Dados Cadastrados com sucesso. ID Gerado: '.$id;
+                    $situacao = TRUE;
                 }
                 else
                 {
-                    echo '<p>Erro no cadastro!</p>';
+                    $msg = 'Erro no cadastro!';
                 }
 
             } catch (PDOException $ex) {
-                echo $ex->getMessage();
+                $msg = $ex->getMessage();
             }
         }
     }
@@ -77,6 +80,3 @@
         header('Location:../TelaHistorico.php');
     }
 ?>
-
-<hr>
-<a href="../TelaHistorico.php">Voltar</a>

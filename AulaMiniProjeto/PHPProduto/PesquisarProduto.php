@@ -41,7 +41,7 @@
                 }
                 else
                 {
-                    $msg = 'Produto não existe';
+                    $msg = 'Erro! Produto não existe';
                 }
 
             } catch (PDOException $ex) {
