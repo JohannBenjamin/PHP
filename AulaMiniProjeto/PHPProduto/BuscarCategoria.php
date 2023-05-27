@@ -1,5 +1,5 @@
 <?php
-include_once('conexao.php');
+include_once('../conexao.php');
 
 try {
     $sql = $conn->query("

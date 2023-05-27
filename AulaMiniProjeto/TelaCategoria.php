@@ -11,29 +11,29 @@
         if($btn == 'buscar')
         {
             $msg = 'Busca realizada com sucesso!';
-            include_once('./PHPCategoria/PesquisarCategoria.php');
+            include_once('../PHPCategoria/PesquisarCategoria.php');
         }
         if($btn == 'cadastrar')
         {
-            include_once('./PHPCategoria/CadastrarCategoria.php');
+            include_once('../PHPCategoria/CadastrarCategoria.php');
             if($situacao)
             {
                 $idCampo = $id;
-                include_once('./PHPCategoria/PesquisarCategoria.php');
+                include_once('../PHPCategoria/PesquisarCategoria.php');
             }
         }
         if($btn == 'alterar')
         {
-            include_once('./PHPCategoria/AlterarCategoria.php');
+            include_once('../PHPCategoria/AlterarCategoria.php');
             if($situacao)
             {
                 $idCampo = $id;
-                include_once('./PHPCategoria/PesquisarCategoria.php');
+                include_once('../PHPCategoria/PesquisarCategoria.php');
             }
         }
         if($btn == 'excluir')
         {
-            include_once('./PHPCategoria/DeletarCategoria.php');
+            include_once('../PHPCategoria/DeletarCategoria.php');
         }
     }
 ?>
@@ -48,7 +48,7 @@
                     <input type="number" name="txtId" id="txtId" class="form-control" min="0" placeholder="Id" value="<?=$idCampo?>">
                 </div>
                 <div class="col-sm-9">
-                    <button id="btnBuscar" name="btn" class="btn btn-primary" formaction="TelaCategoria.php" value="buscar">&#128269;</button>
+                    <button id="btnBuscar" name="btn" class="btn btn-primary" formaction="_sistema.php?tela=categoria" value="buscar">&#128269;</button>
                 </div>
             </div>
             <div class="row mt-3">
@@ -75,10 +75,10 @@
                     </div>
                 </div>
                 <div class="col-sm-6 text-end">
-                    <button id="btnCadastrar" name="btn" class="btn btn-success" formaction="TelaCategoria.php" value="cadastrar">Cadastrar</button>
-                    <button id="btnAlterar" name="btn" class="btn btn-secondary" formaction="TelaCategoria.php" value="alterar">Alterar</button>
-                    <button id="btnLimpar" name="btn" class="btn btn-warning" formaction="TelaCategoria.php" value="limpar">Limpar</button>
-                    <button id="btnExcluir" name="btn" class="btn btn-danger" formaction="TelaCategoria.php" value="excluir">Excluir</button>
+                    <button id="btnCadastrar" name="btn" class="btn btn-success" formaction="_sistema.php?tela=categoria" value="cadastrar">Cadastrar</button>
+                    <button id="btnAlterar" name="btn" class="btn btn-secondary" formaction="_sistema.php?tela=categoria" value="alterar">Alterar</button>
+                    <button id="btnLimpar" name="btn" class="btn btn-warning" formaction="_sistema.php?tela=categoria" value="limpar">Limpar</button>
+                    <button id="btnExcluir" name="btn" class="btn btn-danger" formaction="_sistema.php?tela=categoria" value="excluir">Excluir</button>
                     <button id="btnSair" name="btn" class="btn btn-dark" formaction="" value="sair">Sair</button>
                 </div>
             </div>

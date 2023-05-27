@@ -16,29 +16,29 @@
         if($btn == 'buscar')
         {
             $msg = 'Busca realizada com sucesso!';
-            include_once('./PHPUsuário/PesquisarUsuario.php');
+            include_once('../PHPUsuário/PesquisarUsuario.php');
         }
         if($btn == 'cadastrar')
         {
-            include_once('./PHPUsuário/CadastrarUsuario.php');
+            include_once('../PHPUsuário/CadastrarUsuario.php');
             if($situacao)
             {
                 $idCampo = $id;
-                include_once('./PHPUsuário/PesquisarUsuario.php');
+                include_once('../PHPUsuário/PesquisarUsuario.php');
             }
         }
         if($btn == 'alterar')
         {
-            include_once('./PHPUsuário/AlterarUsuario.php');
+            include_once('../PHPUsuário/AlterarUsuario.php');
             if($situacao)
             {
                 $idCampo = $id;
-                include_once('./PHPUsuário/PesquisarUsuario.php');
+                include_once('../PHPUsuário/PesquisarUsuario.php');
             }
         }
         if($btn == 'excluir')
         {
-            include_once('./PHPUsuário/DeletarUsuario.php');
+            include_once('../PHPUsuário/DeletarUsuario.php');
         }
     }
 ?>
@@ -53,7 +53,7 @@
                     <input type="number" name="txtId" min="0" placeholder="Id" class="form-control" id="txtId" value="<?=$idCampo?>">
                 </div>
                 <div class="col-sm-4">
-                    <button id="btnBuscar" name="btn" class="btn btn-primary" formaction="TelaUsuario.php" value="buscar">&#128269;</button>
+                    <button id="btnBuscar" name="btn" class="btn btn-primary" formaction="_sistema.php?tela=usuario" value="buscar">&#128269;</button>
                 </div>
                 <div class="col-sm-4">
                     <input type="date" name="txtCadastro" class="form-control" id="txtCadastro" placeholder="Data de Cadastro" value="<?=substr($cadastroCampo,0,10)?>">
@@ -99,10 +99,10 @@
                     </div>
                 </div>
                 <div class="col-sm-6 text-end">
-                    <button id="btnCadastrar" name="btn" class="btn btn-success" formaction="TelaUsuario.php" value="cadastrar">Cadastrar</button>
-                    <button id="btnAlterar" name="btn" class="btn btn-secondary" formaction="TelaUsuario.php" value="alterar">Alterar</button>
-                    <a id="btnLimpar" name="btn" class="btn btn-warning" href="TelaUsuario.php">Limpar</a>
-                    <button id="btnExcluir" name="btn" class="btn btn-danger" formaction="TelaUsuario.php" value="excluir">Excluir</button>
+                    <button id="btnCadastrar" name="btn" class="btn btn-success" formaction="_sistema.php?tela=usuario" value="cadastrar">Cadastrar</button>
+                    <button id="btnAlterar" name="btn" class="btn btn-secondary" formaction="_sistema.php?tela=usuario" value="alterar">Alterar</button>
+                    <a id="btnLimpar" name="btn" class="btn btn-warning" href="_sistema.php?tela=usuario">Limpar</a>
+                    <button id="btnExcluir" name="btn" class="btn btn-danger" formaction="_sistema.php?tela=usuario" value="excluir">Excluir</button>
                     <button id="btnSair" name="btn" class="btn btn-dark" formaction="" value="sair">Sair</button>
                 </div>
             </div>
