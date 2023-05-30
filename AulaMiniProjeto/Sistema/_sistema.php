@@ -12,14 +12,15 @@
     <div class="container">
         <div class="row mt-2">
             <?php
-            include_once('_topo.php')
+            include_once('../Login/login_autenticar.php');
+            include_once('_topo.php');
             ?>
         </div>
         <div class="row mt-2">
-            <div class="col-sm-3" id="menu">
+            <div class="col-sm-2" id="menu">
                 <?php include_once('_menu.php')?>
             </div>
-            <div class="col-sm-9" id="conteudo">
+            <div class="col-sm-10" id="conteudo">
                 <?php
                 if(isset($_GET['tela']))
                 {

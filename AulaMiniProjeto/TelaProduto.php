@@ -103,7 +103,7 @@
                     <button id="btnSair" name="btn" class="btn btn-dark" formaction="" value="sair">Sair</button>
                 </div>
             </div>
-        </div>
+        </form>
     </div>
 </div>
 <script src="../js/bootstrap.js"></script>

@@ -1,3 +1,9 @@
+<div class="usuario p-2">
+    <p>ID: <?=$idUsuarioLogin?></p>
+    <p>Nome: <?=$nomeUsuarioLogin?></p>
+    <p>Login: <?=$loginUsuarioLogin?></p>
+    <p>Imagem: <?=$imgUsuarioLogin?></p>
+</div>
 <a href="_sistema.php">
     <div class="subMenu">INÍCIO</div>
 </a>
@@ -13,6 +19,6 @@
 <a href="_sistema.php?tela=historico">
     <div class="subMenu">HISTÓRICO</div>
 </a>
-<a href="_sistema.php?tela=sair">
+<a href="../Login/login_logoff.php">
     <div class="subMenu">SAIR</div>
 </a>
