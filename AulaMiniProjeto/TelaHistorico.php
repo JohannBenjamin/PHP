@@ -1,9 +1,9 @@
 <?php
     $idCampo = '';
     $idUsuarioCampo = '';
-    //$nomeUsuarioCampo = '';
+    $nomeUsuarioCampo = '';
     $idProdutoCampo = '';
-    //$nomeProdutoCampo = '';
+    $nomeProdutoCampo = '';
     $cadastroCampo = '';
     $tipoCampo = '';
     $qtdeCampo = '';
@@ -65,7 +65,7 @@
                 <div class="col-sm-3">
                     <select name="txtNomeUsuario" class="form-control" id="txtNomeUsuario">
                         <option value="">-- Selecione um Usuário --</option>
-                        <option value="...">...</option>
+                        <?php include_once('../PHPHistórico/BuscarUsuario.php'); ?>
                     </select>
                 </div>
                 <div class="col-sm-3">
@@ -74,7 +74,7 @@
                 <div class="col-sm-3">
                     <select name="txtNomeProduto" class="form-control" id="txtNomeProduto">
                         <option value="">-- Selecione um Produto --</option>
-                        <option value="...">...</option>
+                        <?php include_once('../PHPHistórico/BuscarProduto.php'); ?>
                     </select>
                 </div>
             </div>

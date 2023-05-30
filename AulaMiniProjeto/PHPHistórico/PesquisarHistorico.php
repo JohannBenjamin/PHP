@@ -13,7 +13,11 @@
 
             try {
                 $sql = $conn->query("
-                    select * from Historico where id_Historico=$id
+                    select H.id_Historico, H.id_Usuario_Historico, H.id_Produto_Historico, H.momento_Historico, H.tipo_Historico, H.qtde_Historico, H.valor_Historico, H.status_Historico, H.obs_Historico, U.nome_Usuario, P.nome_Produto
+                    from Historico as H
+                    inner join Usuario as U on U.id_Usuario = H.id_Usuario_Historico
+                    inner join Produto as P on P.id_Produto = H.id_Produto_Historico
+                    where id_Historico=$id;
                 ");
 
                 if ($sql->rowCount()>=1) {
@@ -30,15 +34,15 @@
 
                         $idCampo = $row[0];
                         $idUsuarioCampo = $row[1];
-                        //$nomeUsuarioCampo = '';
                         $idProdutoCampo = $row[2];
-                        //$nomeProdutoCampo = '';
                         $cadastroCampo = $row[3];
                         $tipoCampo = $row[4];
                         $qtdeCampo = $row[5];
                         $valorCampo = $row[6];
                         $statusCampo = $row[7];
                         $obsCampo = $row[8];
+                        $nomeUsuarioCampo = $row[9];
+                        $nomeProdutoCampo = $row[10];
                     }
                 }
                 else
