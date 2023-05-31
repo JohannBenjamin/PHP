@@ -25,6 +25,10 @@
             {
                 $idCampo = $id;
                 include_once('../PHPUsuário/PesquisarUsuario.php');
+
+                $caminho = '../PHPUsuário/img/';
+                $arquivo = $caminho . basename($_FILES['txtImg']['name']);
+                move_uploaded_file($_FILES['txtImg']['tmp_name'], $arquivo);
             }
         }
         if($btn == 'alterar')
@@ -47,7 +51,7 @@
         <div class="col-sm-12 text-center">
             <h1>Gerenciamento de Usuários</h1>
         </div>
-        <form action="" method="post" class="form-control">
+        <form enctype="multipart/form-data" action="" method="post" class="form-control">
             <div class="row mt-3">
                 <div class="col-sm-4">
                     <input type="number" name="txtId" min="0" placeholder="Id" class="form-control" id="txtId" value="<?=$idCampo?>">

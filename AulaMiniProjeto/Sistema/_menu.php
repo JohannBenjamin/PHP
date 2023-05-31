@@ -2,7 +2,7 @@
     <p>ID: <?=$idUsuarioLogin?></p>
     <p>Nome: <?=$nomeUsuarioLogin?></p>
     <p>Login: <?=$loginUsuarioLogin?></p>
-    <p>Imagem: <?=$imgUsuarioLogin?></p>
+    <img src="../PHPUsuário/img/<?=$imgUsuarioLogin?>" class="img-fluid">
 </div>
 <a href="_sistema.php">
     <div class="subMenu">INÍCIO</div>
