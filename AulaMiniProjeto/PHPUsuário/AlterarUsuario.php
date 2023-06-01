@@ -42,7 +42,7 @@
                 empty($_POST['txtUsuario']) ||
                 empty($_POST['txtSenha']) ||
                 empty($_POST['txtNascimento']) ||
-                empty($_POST['txtImg']) ||
+                empty($_FILES['txtImg']['name']) ||
                 empty($_POST['txtStatus']) ||
                 empty($_POST['txtObs']))
                 {
@@ -67,9 +67,9 @@
                     {
                         $nascimento = $_POST['txtNascimento'];
                     }
-                    if(!empty($_POST['txtImg']))
+                    if(!empty($_FILES['txtImg']['name']))
                     {
-                        $img = $_POST['txtImg'];
+                        $img = $_FILES['txtImg']['name'];
                     }
                     if(!empty($_POST['txtStatus']))
                     {
