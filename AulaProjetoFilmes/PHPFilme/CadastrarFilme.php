@@ -26,9 +26,10 @@
             $obs = $_POST['txtObs'];
             
             //renomeando a imagem
-            $nomeImg = str_replace(" ", "-", $nome)
+            $nome = str_replace(":", "", $nome);
+            $nomeImg = str_replace(" ", "-", $nome);
             $indiceImg = strpos($img,'.');
-            $tipoImg = .substr($img, $indiceImg);
+            $tipoImg = substr($img, $indiceImg);
             $img = $nomeImg.$tipoImg;
 
 

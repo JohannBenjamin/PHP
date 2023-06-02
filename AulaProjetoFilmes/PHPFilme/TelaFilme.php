@@ -63,7 +63,7 @@
                         <input type="number" name="txtId" id="txtId" class="form-control" min="0" placeholder="Id" value="<?=$idCampo?>">
                     </div>
                     <div class="col-sm-3">
-                        <button id="btnBuscar" name="btn" class="btn btn-primary" formaction="" value="buscar">&#128269;</button>
+                        <button id="btnBuscar" name="btn" class="btn btn-primary" formaction="TelaFilme.php" value="buscar">&#128269;</button>
                     </div>
                     <div class="col-sm-3">
                         <input type="number" name="txtIdCategoria" id="txtIdCategoria" class="form-control" min="0" placeholder="Id da Categoria" value="<?=$idCategoriaCampo?>">
