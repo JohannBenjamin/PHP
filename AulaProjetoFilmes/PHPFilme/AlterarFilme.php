@@ -38,12 +38,12 @@
 
             if ($situacao)
             {
-                if(empty($_POST['txtIdCategoria']) ||
-                empty($_POST['txtNome']) ||
-                empty($_POST['txtSinopse']) ||
-                empty($_FILES['txtImg']['name']) ||
-                empty($_POST['txtNota']) ||
-                empty($_POST['txtStatus']) ||
+                if(empty($_POST['txtIdCategoria']) &&
+                empty($_POST['txtNome']) &&
+                empty($_POST['txtSinopse']) &&
+                empty($_FILES['txtImg']['name']) &&
+                empty($_POST['txtNota']) &&
+                empty($_POST['txtStatus']) &&
                 empty($_POST['txtObs']))
                 {
                     $msg = 'Nenhum dado a Alterar!';
@@ -88,9 +88,9 @@
 
                     if($situacaoImg && $situacaoNome)
                     {
-                        $nomeImg = str_replace(" ", "-", $nome)
+                        $nomeImg = str_replace(" ", "-", $nome);
                         $indiceImg = strpos($img,'.');
-                        $tipoImg = .substr($img, $indiceImg);
+                        $tipoImg = substr($img, $indiceImg);
                         $img = $nomeImg.$tipoImg;
 
                         $caminho = '../img/';
@@ -101,9 +101,9 @@
                     }
                     else if($situacaoImg)
                     {
-                        $nomeImg = str_replace(" ", "-", $nome)
+                        $nomeImg = str_replace(" ", "-", $nome);
                         $indiceImg = strpos($img,'.');
-                        $tipoImg = .substr($img, $indiceImg);
+                        $tipoImg = substr($img, $indiceImg);
                         $img = $nomeImg.$tipoImg;
 
                         $caminho = '../img/';
@@ -116,9 +116,9 @@
                     {
                         $caminhoImgVelho = '../img/'.$img;
 
-                        $nomeImg = str_replace(" ", "-", $nome)
+                        $nomeImg = str_replace(" ", "-", $nome);
                         $indiceImg = strpos($img,'.');
-                        $tipoImg = .substr($img, $indiceImg);
+                        $tipoImg = substr($img, $indiceImg);
                         $img = $nomeImg.$tipoImg;
                         
                         $caminhoImgNovo = '../img/'.$img;

@@ -34,8 +34,8 @@
 
             if ($situacao)
             {
-                if(empty($_POST['txtNome']) ||
-                empty($_POST['txtStatus']) ||
+                if(empty($_POST['txtNome']) &&
+                empty($_POST['txtStatus']) &&
                 empty($_POST['txtObs']))
                 {
                     $msg = 'Nenhum dado a Alterar!';
