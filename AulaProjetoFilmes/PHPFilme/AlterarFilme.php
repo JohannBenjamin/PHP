@@ -18,11 +18,11 @@
                     foreach ($sql as $row) {
                         $idCategoria = $row[1];
                         $nome = $row[2];
-                        $sinopse = $row[4];
-                        $img = $row[5];
-                        $nota = $row[6];
-                        $status = $row[7];
-                        $obs = $row[8];
+                        $sinopse = $row[3];
+                        $img = $row[4];
+                        $nota = $row[5];
+                        $status = $row[6];
+                        $obs = $row[7];
                         
                         $situacao = TRUE;
                     }
@@ -59,7 +59,7 @@
                     }
                     if(!empty($_POST['txtNome']))
                     {
-                        $nomeVelho = $nome;
+                        $nomeVelho = $img;
                         $nome = $_POST['txtNome'];
                         $situacaoNome = TRUE;
                     }
@@ -69,7 +69,7 @@
                     }
                     if(!empty($_FILES['txtImg']['name']))
                     {
-                        $nomeVelho = $nome;
+                        $nomeVelho = $img;
                         $img = $_FILES['txtImg']['name'];
                         $situacaoImg = TRUE;
                     }
@@ -88,16 +88,15 @@
 
                     if($situacaoImg && $situacaoNome)
                     {
+                        $caminho = '../img/';
+                        unlink($caminho.$nomeVelho);
+
                         $nomeImg = str_replace(" ", "-", $nome);
                         $indiceImg = strpos($img,'.');
                         $tipoImg = substr($img, $indiceImg);
                         $img = $nomeImg.$tipoImg;
-
-                        $caminho = '../img/';
                         $arquivo = $caminho . $img;
                         move_uploaded_file($_FILES['txtImg']['tmp_name'], $arquivo);
-
-                        unlink($caminho.$nomeVelho);
                     }
                     else if($situacaoImg)
                     {
